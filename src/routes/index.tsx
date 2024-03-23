@@ -7,14 +7,36 @@ import {
 import NotFound from "../pages/NotFound";
 import Home from "../pages/Home";
 import SingleDogPage from "../pages/dog/SingleDogPage";
+import DefaultLayout from "../components/layout/Default";
 
 function Routes() {
   return (
     <Router>
       <DomeRoutes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dog/:id" element={<SingleDogPage />} />
-        <Route path="*" element={<NotFound />} />
+        <Route
+          path="/"
+          element={
+            <DefaultLayout>
+              <Home />
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="/dog/:id"
+          element={
+            <DefaultLayout>
+              <SingleDogPage />
+            </DefaultLayout>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <DefaultLayout>
+              <NotFound />
+            </DefaultLayout>
+          }
+        />
       </DomeRoutes>
     </Router>
   );
