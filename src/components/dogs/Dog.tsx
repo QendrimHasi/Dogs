@@ -8,8 +8,12 @@ function Dog({
   data: { url: string; name: string; id: string };
 }) {
   return (
-    <Grid item xs={12} sm={6} md={4}>
-      <Link to={`/dog/${id}`} target="_blank">
+    <Grid item xs={12} sm={6} md={4} data-testid="dog">
+      <Link
+        to={`/dog/${id}`}
+        target="_blank"
+        style={{ textDecoration: "none" }}
+      >
         <Card
           sx={{
             transition: "0.3s",
@@ -20,8 +24,8 @@ function Dog({
         >
           <CardMedia component="img" height="300" image={url} alt={name} />
           <CardContent>
-            <Typography variant="body2" color="text.secondary">
-              Breed: {name || "No name"}
+            <Typography color="primary">
+              <strong>Breed: {name || "No name"}</strong>
             </Typography>
           </CardContent>
         </Card>

@@ -1,19 +1,23 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, lighten, styled } from "@mui/material";
+
+const Wrapper = styled(Box)<any>`
+  background-color: ${({ theme }) =>
+    lighten(theme.palette.secondary.main, 0.2)};
+  box-shadow: none;
+  color: ${({ theme }) => theme.palette.primary.main};
+  border-top: 1px solid ${({ theme }) => theme.palette.primary.main};
+  padding: 20px 0;
+  width: 100%;
+`;
 
 function Footer() {
   return (
-    <Box
-      sx={{
-        padding: "20px 0",
-        width: "100%",
-        backgroundColor: "#f8f8f8",
-      }}
-    >
-      <Typography variant="body2" color="text.secondary" align="center">
+    <Wrapper>
+      <Typography color="text.secondary" align="center">
         © {new Date().getFullYear()} Dog App
       </Typography>
-    </Box>
+    </Wrapper>
   );
 }
 
