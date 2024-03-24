@@ -32,7 +32,7 @@ function Search() {
   };
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} style={{ marginBottom: 15 }}>
       <Grid item xs={12} md={4}>
         <TextField
           value={search}
